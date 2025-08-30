@@ -40,7 +40,7 @@ public class Main {
                     System.err.println(e.getMessage());
                 }
                 System.out.println("Program is stoped!");
-                System.exit(0);
+                System.exit(0); //работа программы прекращается(когда выбрасывается throw сообшение)
         }
     }
     static String reversedMethod(String word){
