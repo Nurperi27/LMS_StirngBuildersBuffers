@@ -3,33 +3,46 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Task 1.\nEnter text:");
-        String word1 = new Scanner(System.in).nextLine();
-        System.out.println("Reversed string: " + reversedMethod(word1));
-        System.out.println("Task 2.\nEnter 5 words: ");
-        String[] str = new String[5];
-        for(int i=0; i<str.length; i++){
-            str[i] = new Scanner(System.in).nextLine();
+        boolean isTure = true;
+        while(true) {
+            try {
+                    System.out.println("Task 1.\nEnter text:");
+                    String str1 = new Scanner(System.in).nextLine();
+                    System.out.println("Reversed string: " + reversedMethod(str1));
+                    System.out.println("Task 2.\nEnter 5 words: ");
+                    String[] str2 = new String[5];
+                    for (int i = 0; i < str2.length; i++) {
+                        str2[i] = new Scanner(System.in).nextLine();
+                    }
+                    System.out.println("Joined words from array: " + joinElements(str2));
+                    System.out.println("Task 3.\nEnter the text: ");
+                    String str3 = new Scanner(System.in).nextLine();
+                    vowelLetters(str3);
+                    System.out.println("Task 4.\nEnter word: ");
+                    String str4 = new Scanner(System.in).nextLine();
+                    palindrome(str4);
+                    System.out.println("Task 5.\nEnter the text: ");
+                    String str5 = new Scanner(System.in).nextLine();
+                    toUpper(str5);
+                    System.out.println("Task 6.\nEnter the text: ");
+                    String str6 = new Scanner(System.in).nextLine();
+                    countWords(str6);
+                    System.out.println("Task 7.\nEnter charachter: ");
+                    char ch7 = new Scanner(System.in).next().charAt(0);
+                    System.out.println("ASCII code of " + ch7 + " = " + toASCII(ch7));
+                    System.out.println("Task 8.\nEnter text: ");
+                    String str8 = new Scanner(System.in).nextLine();
+                    System.out.println("After removing spaces: " + removeSpaces(str8));
+                if(str1.isEmpty() || Arrays.toString(str2).isEmpty() || str3.isEmpty() || str4.isEmpty()
+                        || str5.isEmpty() || str6.isEmpty() || ch7 == ' ' || str8.isEmpty()) {
+                    throw new RuntimeException("Вы ввели пустое значение");
+                }
+            }catch (RuntimeException e){
+                System.err.println(e.getMessage());
+            }
+            isTure = false;
+            System.out.println("Program is closed!");
         }
-        System.out.println("Joined words from array: " + joinElements(str));
-        System.out.println("Task 3.\nEnter the text: ");
-        String text2 = new Scanner(System.in).nextLine();
-        vowelLetters(text2);
-        System.out.println("Task 4.\nEnter word: ");
-        String word4 = new Scanner(System.in).nextLine();
-        palindrome(word4);
-        System.out.println("Task 5.\nEnter the text: ");
-        String text5 = new Scanner(System.in).nextLine();
-        toUpper(text5);
-        System.out.println("Task 6.\nEnter the text: ");
-        String text6 = new Scanner(System.in).nextLine();
-        countWords(text6);
-        System.out.println("Task 7.\nEnter charachter: ");
-        char ch7 = new Scanner(System.in).next().charAt(0);
-        System.out.println("ASCII code of " + ch7 + " = " + toASCII(ch7));
-        System.out.println("Task 8.\nEnter text: ");
-        String text = new Scanner(System.in).nextLine();
-        System.out.println("After removing spaces: " + removeSpaces(text));
     }
     static String reversedMethod(String word){
         StringBuffer stringBuffer = new StringBuffer(word);
