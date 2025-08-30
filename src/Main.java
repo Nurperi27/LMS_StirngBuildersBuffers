@@ -3,9 +3,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        boolean isTure = true;
-        while(true) {
-            try {
+            while (true) {
+                try {
                     System.out.println("Task 1.\nEnter text:");
                     String str1 = new Scanner(System.in).nextLine();
                     System.out.println("Reversed string: " + reversedMethod(str1));
@@ -33,15 +32,15 @@ public class Main {
                     System.out.println("Task 8.\nEnter text: ");
                     String str8 = new Scanner(System.in).nextLine();
                     System.out.println("After removing spaces: " + removeSpaces(str8));
-                if(str1.isEmpty() || Arrays.toString(str2).isEmpty() || str3.isEmpty() || str4.isEmpty()
-                        || str5.isEmpty() || str6.isEmpty() || ch7 == ' ' || str8.isEmpty()) {
-                    throw new RuntimeException("Вы ввели пустое значение");
+                    if (str1.isEmpty() || Arrays.toString(str2).isEmpty() || str3.isEmpty() || str4.isEmpty()
+                            || str5.isEmpty() || str6.isEmpty() || ch7 == ' ' || str8.isEmpty()) {
+                        throw new RuntimeException("Post Scriptum: Вы где-то ввели пустое значение");
+                    }
+                } catch (RuntimeException e) {
+                    System.err.println(e.getMessage());
                 }
-            }catch (RuntimeException e){
-                System.err.println(e.getMessage());
-            }
-            isTure = false;
-            System.out.println("Program is closed!");
+                System.out.println("Program is stoped!");
+                System.exit(0);
         }
     }
     static String reversedMethod(String word){
